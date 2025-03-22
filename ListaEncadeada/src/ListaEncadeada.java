@@ -3,6 +3,44 @@ public class ListaEncadeada {
     private Celula latest;
     private Celula currently;
 
+    public void Add(Contato value) {
+        Celula celula = new Celula(value, null);
+
+        celula.setValue(value);
+
+        if(first == null && latest == null){
+            first = celula;
+        }else{
+            latest.setNext(celula);
+            latest.setNext(null);
+        }
+
+        latest = celula;
+
+        if(currently != null) currently.setNext(celula);
+
+        currently = celula;
+    }
+
+    public boolean HasNext(){
+        if(first == null){
+            return false;
+        }else if(currently == null){
+            currently = first;
+            return true;
+        }else{
+            boolean hasNext = currently.getNext() != null ? true : false;
+
+            currently = currently.getNext();
+
+            return hasNext;
+        }
+
+
+    }
+
+
+
     public Celula getFirst() {
         return first;
     }
@@ -25,26 +63,5 @@ public class ListaEncadeada {
 
     public void setCurrently(Celula currently) {
         this.currently = currently;
-    }
-
-    public void Add(Contato value) {
-        Celula celula = new Celula(value, null);
-
-        latest = celula;
-
-        if(first == null && latest == null){
-            first = celula;
-            latest = celula;
-        }else{
-            latest = celula;
-        }
-
-        if(currently != null) currently.setNext(celula);
-
-        currently = celula;
-    }
-
-    public void Remove(Celula value){
-
     }
 }

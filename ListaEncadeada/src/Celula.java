@@ -1,13 +1,13 @@
 public class Celula {
-    private Contato data;
+    private Contato value;
     private Celula next;
 
-    public Contato getData() {
-        return data;
+    public Contato getValue() {
+        return value;
     }
 
-    public void setData(Contato data) {
-        this.data = data;
+    public void setValue(Contato data) {
+        this.value = data;
     }
 
     public Celula getNext() {
@@ -19,7 +19,7 @@ public class Celula {
     }
 
     public Celula(Contato data, Celula next) {
-        this.data = data;
+        this.value = data;
         this.next = next;
     };
 
