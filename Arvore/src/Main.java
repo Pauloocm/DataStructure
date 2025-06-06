@@ -7,6 +7,8 @@ public class Main {
 
         arvore.InserirEsquerda(12, 10);
         arvore.inserirDireita(12, 14);
+        arvore.inserirDireita(12, 16);
+        arvore.InserirEsquerda(12, 6);
 
         arvore.exibePreOrdem();
     }

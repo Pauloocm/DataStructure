@@ -57,6 +57,18 @@ public class Node {
             right.printInOrder();
         }
     }
+
+    public void printPreOrderRightFirst(){
+        System.out.println(data);
+
+        if(right != null){
+            right.printPreOrderRightFirst();
+        }
+
+        if(left != null){
+            left.printPreOrderRightFirst();
+        }
+    }
 }
 
 
